@@ -3,3 +3,10 @@
 
   font-size: 15px;
 }
+
+.title-side-card{
+  text-decoration: none!important;
+}
+.title-side-card:hover{
+  text-decoration: none!important;
+}

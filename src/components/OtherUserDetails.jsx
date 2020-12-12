@@ -7,6 +7,7 @@ import AnnounceCard from "./AnnounceCard";
 import Dashboard from "./Dashboard";
 import Category from "./Category";
 import Interests from "./Interests";
+import Footer from './Footer';
 import CurrentUserExperience from "./CurrentUserExperience";
 import Loader from "./Loader";
 
@@ -29,7 +30,6 @@ export default class ProfileComponent extends Component {
       }
     );
     let userProfile = await response.json();
-    console.log("This is userProfile", userProfile);
     this.setState({ userProfile });
   };
 
@@ -45,7 +45,6 @@ export default class ProfileComponent extends Component {
     );
     if (response.ok) {
       let allUsersProfile = await response.json();
-      console.log(allUsersProfile);
       this.setState({ allUsersProfile });
     } else {
       <Alert>Opps, an error occured: </Alert>;
@@ -53,26 +52,23 @@ export default class ProfileComponent extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params.userId);
     this.getUserProfile();
     this.getUsersProfile();
+
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.getUserProfile();
-      this.getUsersProfile();
     }
 
     if (this.state.showMore) {
-      console.log("just entered componentDidUpdate");
       this.showUsers();
       this.setState({ showMore: false });
     }
   }
 
   render() {
-    console.log(this.state.userProfile);
     return (
       <>
         <Container>
@@ -118,6 +114,7 @@ export default class ProfileComponent extends Component {
               )}
             </Col>
           </Row>
+          <Footer />
         </Container>
       </>
     );

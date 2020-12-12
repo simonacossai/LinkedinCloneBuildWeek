@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import {  Card, Button } from 'react-bootstrap';
 
 import {HiOutlineDotsHorizontal} from 'react-icons/hi';
-
+import logo from '../assets/logo.png';
 import '../styles/Profile.css'
 
-let logo =  './assets/logo.png';
 export default class AnnounceCard extends Component {
     render() {
         return (

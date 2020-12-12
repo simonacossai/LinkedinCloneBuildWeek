@@ -29,7 +29,6 @@ class Experience extends Component {
       if (response.ok) {
         let responseExperience = await response.json();
         this.setState({ experience: responseExperience });
-        console.log(responseExperience);
       }
     } catch (e) {}
   };
@@ -38,14 +37,8 @@ class Experience extends Component {
     this.getExperience();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.experience !== this.state.experience) {
-      this.getExperience();
-    }
-  }
 
   render() {
-    console.log(this.state.experience);
     return (
       <div>
         <Card className="experience-container my-2">
@@ -57,7 +50,7 @@ class Experience extends Component {
                 </Card.Title>
               </Col>
               <Col className="d-flex justify-content-end">
-                <FaPlus onClick={this.handleShow} />
+                <FaPlus onClick={this.handleShow} style={{color:"black"}}/>
               </Col>
             </Row>
 

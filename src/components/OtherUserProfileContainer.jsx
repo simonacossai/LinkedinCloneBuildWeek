@@ -13,7 +13,7 @@ export default class ProfileContainer extends Component {
       <Card className="card-user-profile">
         <Card.Img
           variant="top"
-          src="https://media-exp1.licdn.com/dms/image/C4E16AQFGvXwGqrpN7w/profile-displaybackgroundimage-shrink_350_1400/0/1602886552408?e=1612396800&v=beta&t=OgyPkQ41f4wnIJJ0SWmEY4caxBbVbzSd_o0i7MplkFk"
+          src="https://cuborosso.com/wp-content/uploads/2019/10/linkedin-background-image-elegant-awesome-linkedin-cover-ideas-pilation-of-linkedin-background-image.jpg"
           className="coverImage image-fluid"
         />
         <Card.Body>

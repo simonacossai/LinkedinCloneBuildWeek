@@ -1,12 +1,14 @@
 import React from 'react'
-import {VscLoading} from 'react-icons/vsc'
+
+import {Spinner} from 'react-bootstrap'
 
 
 const Loader = () =>{
     return (
-        <div className="d-flex spinner fadein">
-            <VscLoading  className="m-auto" style={{fontSize: "3rem"}}/>
+        <div className="d-flex">
+            <Spinner animation="border" size="lg" variant="secondary" className="m-auto"  />
         </div>
+        
     )
 }
 

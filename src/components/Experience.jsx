@@ -8,6 +8,7 @@ import SingleExperience from "./SingleExperience";
 import { Link } from "react-router-dom";
 
 class Experience extends Component {
+
   state = {
     add: false,
     edit: false,
@@ -24,7 +25,7 @@ class Experience extends Component {
 
   url = `https://striveschool-api.herokuapp.com/api/profile/${process.env.REACT_APP_USER_ID}/experiences`
   getExperience = async () => {
-    try {
+    try{
       let response = await fetch(
         this.url,
         {
@@ -34,7 +35,7 @@ class Experience extends Component {
           }),
         }
       );
-      if (response.ok) {
+      if(response.ok){
         let responseExperience = await response.json();
         this.setState({experience: responseExperience})
   
@@ -45,10 +46,15 @@ class Experience extends Component {
     }
   };
 
-  componentDidMount() {
+  componentDidMount(){
     this.getExperience();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.experience !== this.state.experience) {
+      this.getExperience();
+    }
+  }
 
   render(){
    
@@ -63,10 +69,10 @@ class Experience extends Component {
                 </Card.Title>
               </Col>
               <Link to="/profile/edit/position/new"><Col className="d-flex justify-content-end">
-                <FaPlus onClick={this.handleAddOpen} />
+               { <FaPlus onClick={this.handleAddOpen} />} 
               </Col></Link>
             </Row>
-
+  
             {this.state.experience &&
               this.state.experience.map((element) =>  ( 
                 <SingleExperience key={element._id} experience={element} onClick={this.handleEditOpen}/>
@@ -82,6 +88,7 @@ class Experience extends Component {
       </div>
     );
   }
+ 
 }
 
-export default Experience;
+export default Experience

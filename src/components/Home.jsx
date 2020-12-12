@@ -4,7 +4,10 @@ import CreatePostComponent from './CreatePostComponent';
 import SinglePost from './SinglePost';
 import AnnounceCard from './AnnounceCard';
 import ProfileDetailsCard from './ProfileDetailsCard';
+import ModifyProfileCard from './ModifyProfileCard';
 import MostUsedHashtag from './MostUsedHashtag';
+import AddFeedComponent from './AddFeedComponent';
+
 export default class Home extends Component {
     state={
         posts:[],
@@ -48,8 +51,8 @@ export default class Home extends Component {
             }
             </Col>
             <Col md={3} >
-            <AnnounceCard/>
-            <AnnounceCard/>
+            <ModifyProfileCard/>
+            <AddFeedComponent/>
             <AnnounceCard/>
             </Col>
                  </Row>

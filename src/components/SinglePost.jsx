@@ -131,7 +131,9 @@ export default class SinglePost extends Component {
                             {this.props.post.text}
                         </Card.Text>
                     </Card.Body>
-                    {this.props.post.image && <Card.Img variant="bottom" src={this.props.post.image} />}
+
+                    {this.props.post.image && <Card.Img variant="bottom" src={this.props.post.image} style={{height: "400px", objectFit:"cover"}}/>}
+
                     <Card.Footer className="text-muted">
                         <Row>
                             <Col md={3} className="m-0 p-0" style={this.state.click ? {color: "#0069D9"}: {color: "grey"}}>

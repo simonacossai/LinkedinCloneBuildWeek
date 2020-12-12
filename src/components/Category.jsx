@@ -34,14 +34,15 @@ export default class Category extends Component {
 
 
  render() {
+
         return (
-            <Card className="mt-4" style={{ width: '20rem', borderRadius:"12px"}} >
-                <Card.Title className="text-left m-0 p-0 pt-4 px-3"> 
+            <Card className="mt-4" style={{ width: '20rem', borderRadius:"16px"}} >
+                <Card.Title className="text-left m-0 p-0 pt-4 px-3" > 
                     <h2 style={{fontSize:"1em"}}>{this.props.title}</h2>
                 </Card.Title>
                 <Card.Body className="text-left m-0 p-0  pt-4 px-3">
                     {this.state.display_users.map((user) => (
-                      <Link to={`/other-user-details/${user._id}`}>
+                      <Link to={`/other-user-details/${user._id}`} style={{textDecoration:"none"}} >
                         {" "}
                         <SideCard
                           imgSrc={user.image}
